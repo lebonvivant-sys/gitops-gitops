@@ -20,6 +20,7 @@ pipeline {
   stages {
     stage ('Validate configuration resources') {
       steps {
+       echo sh(script: 'env|sort', returnStdout: true)
         sh 'oc apply --dry-run=client -k config'
       }
     }
