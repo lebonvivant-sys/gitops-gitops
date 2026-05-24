@@ -17,11 +17,5 @@ metadata:
     uid: 677dbaaf-95f2-4b93-ac1e-fac2ef09ee29
   resourceVersion: "2024546"
   uid: 4256ae4b-a9e8-401c-9d69-5ffa6f2f94a2
-spec:
-  identityProviders:
-  - htpasswd:
-      fileData:
-        name: htpasswd-secret
-    mappingMethod: claim
-    name: htpasswd_provider
-    type: HTPasswd
+spec: {}
+  
