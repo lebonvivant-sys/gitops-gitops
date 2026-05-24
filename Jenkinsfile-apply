@@ -20,9 +20,10 @@ pipeline {
   stages {
     stage ('Validate configuration resources') {
       steps {
-       echo sh(script: 'env|sort', returnStdout: true)
-       sh 'oc login -u kubeadmin -p s9GuP-YeGdk-pgrU9-cB9LB --insecure-skip-tls-verify https://api.cluster-dev.klaverviertjes.nl:6443' 
-       sh 'oc apply --dry-run=client -k config'
+       //echo sh(script: 'env|sort', returnStdout: true)
+       //sh 'oc login -u kubeadmin -p s9GuP-YeGdk-pgrU9-cB9LB --insecure-skip-tls-verify https://api.cluster-dev.klaverviertjes.nl:6443' 
+      sh 'oc logout' 
+      sh 'oc apply --dry-run=client -k config'
 
       }
     }
