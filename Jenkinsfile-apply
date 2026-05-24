@@ -21,7 +21,9 @@ pipeline {
     stage ('Validate configuration resources') {
       steps {
        echo sh(script: 'env|sort', returnStdout: true)
-        sh 'oc apply --dry-run=client -k config'
+       sh 'oc login -u josk -p redhat' 
+       sh 'oc apply --dry-run=client -k config'
+
       }
     }
     stage ('Apply resources') {
