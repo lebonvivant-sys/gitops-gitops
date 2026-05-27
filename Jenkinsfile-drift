@@ -19,6 +19,8 @@ pipeline {
   stages {
     stage ('Check resource drift') {
       steps {
+         sh 'oc login --server=https://api.cluster-dev.klaverviertjes.nl:6443 --token=sha256~IBVRYBAPBeLkiLwBlYvwoAIet4FjnDcbSjdr6I_RLyw'
+        sh 'oc whoami'
         sh 'oc diff -k config | tee drift-report.txt'
         sh '! test -s drift-report.txt'
       }
