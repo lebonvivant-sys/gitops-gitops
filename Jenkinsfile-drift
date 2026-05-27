@@ -2,6 +2,15 @@ pipeline {
   triggers {
   cron('H/5 * * * *')
   }
+  environment {
+         //DOMAIN='apps.ocp4.example.com'
+        DOMAIN='apps.cluster-dev.klaverviertjes.nl'
+        PRJ="gitops-gitops-${env.BRANCH_NAME}-${env.BUILD_NUMBER}"
+        APP='gitops-gitops'
+        PATH = "/usr/bin:${env.PATH}"
+         
+  }  
+
   agent {
     node {
       label 'nodejs'
