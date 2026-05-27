@@ -17,13 +17,13 @@ pipeline {
   }
   post {
     failure {
-     archiveArtifactsartifacts: '*.txt'
+     archiveArtifacts artifacts: '*.txt'
      build job: 'apply/main'
     }
     success {
     sh 'rm drift-report.txt'
     sh 'echo \'There is no configuration drift!\'' > no-drift.txt
-    archiveArtifactsartifacts: '*.txt'
+    archiveArtifacts artifacts: '*.txt'
     }
   }
 }
