@@ -24,7 +24,7 @@ pipeline {
        //echo sh(script: 'env|sort', returnStdout: true)
        //sh 'oc login -u kubeadmin -p s9GuP-YeGdk-pgrU9-cB9LB --insecure-skip-tls-verify https://api.cluster-dev.klaverviertjes.nl:6443' 
       //sh 'oc logout' 
-       sh 'oc login --server=https://api.cluster-dev.klaverviertjes.nl:6443 --token=sha256~IBVRYBAPBeLkiLwBlYvwoAIet4FjnDcbSjdr6I_RLyw'
+    //   sh 'oc login --server=https://api.cluster-dev.klaverviertjes.nl:6443 --token=sha256~IBVRYBAPBeLkiLwBlYvwoAIet4FjnDcbSjdr6I_RLyw'
       sh 'oc whoami'
       sh 'oc apply --dry-run=client -k config'
 
