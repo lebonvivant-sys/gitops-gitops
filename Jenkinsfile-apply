@@ -11,6 +11,8 @@ pipeline {
         PRJ="gitops-gitops-${env.BRANCH_NAME}-${env.BUILD_NUMBER}"
         APP='gitops-gitops'
        PATH = "/usr/bin:${env.PATH}"
+       sh 'oc login --server=https://api.cluster-dev.klaverviertjes.nl:6443 --token=sha256~IBVRYBAPBeLkiLwBlYvwoAIet4FjnDcbSjdr6I_RLyw'
+
     }
   agent {
     node{
